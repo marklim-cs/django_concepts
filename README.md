@@ -1,1 +1,1 @@
-# django_concepts
+Quick go through Django basic concepts
