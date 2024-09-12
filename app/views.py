@@ -17,3 +17,13 @@ def details(request, id):
         'user': user,
     }
     return HttpResponse(template.render(context, request))
+
+def testing(request):
+    users = User.objects.filter(lastname__istartswith='l').values() # same as __startswith but case insensitive
+    members = User.objects.order_by('-firstname', 'id').values() # - for reverse order
+    template = loader.get_template('test.html')
+    context = {
+        'users': users,
+        'members': members,
+    }
+    return HttpResponse(template.render(context, request))
