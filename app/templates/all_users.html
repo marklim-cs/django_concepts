@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 {% block body%}
-
+<div class="mycard">
     <h1>Users</h1>
     <ul>
         {% for x in users %}
             <li><a href="{% url 'details' x.slug %}"> {{x.firstname}} {{x.lastname}}</a></li>
         {% endfor %}
     </ul>
-
+</div>
 {% endblock %}
