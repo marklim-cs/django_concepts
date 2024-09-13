@@ -3,5 +3,6 @@ from .models import User
 
 class UserAdmin(admin.ModelAdmin):
     list_display = ("id", "firstname", "lastname",)
+    prepopulated_fields = {"slug": ("firstname", "lastname")}
 
 admin.site.register(User, UserAdmin)

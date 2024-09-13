@@ -10,8 +10,8 @@ def all_users(request):
     }
     return HttpResponse(template.render(context, request))
 
-def details(request, id):
-    user = User.objects.get(id=id)
+def details(request, slug):
+    user = User.objects.get(slug=slug)
     template = loader.get_template('details.html')
     context = {
         'user': user,
